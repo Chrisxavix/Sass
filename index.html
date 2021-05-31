@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Comment Code Style -->
+    <link rel="stylesheet" href="https://chrisxavix.github.io/Css/comment-code/prism.css">
+</head>
+<body>
+    <pre style="font-size: 12px;"><code class="language-css">
+/* Creando estilos con scss */
+.mainSection {
+    h1 {
+        color: $mainColor;
+        font-size: 40px;
+        text-align: center;
+    }
+    h2 {
+        color: $thirdColor;
+    }
+    p {
+        color: $fourthColor;
+        font-weight: bold;
+    }
+}
+
+/* Variables de colores */
+$mainColor: rgb(26, 77, 22);
+$secondColor: rgb(255, 166, 0);
+$thirdColor: rgb(103, 19, 114);
+$fourthColor: black;
+$fiveColor: rgb(206, 34, 34);
+    </code></pre>
+
+    <section class="mainSection">
+        <h1>SASS</h1>
+        <h2>Iniciando con el procesador de css</h2>
+        <p>Un preprocesador CSS es una herramienta que nos permite generar, de manera automática, hojas de estilo, añadiéndoles características que no tiene CSS, y que son propias de los lenguajes de programación, como pueden ser variables, funciones, selectores anidados, herencia, etcétera.</p>
+    </section>
+
+    <pre style="font-size: 12px;"><code class="language-css">
+/* Evita la repetición */
+/* Tiene como parámetro el color */
+/* Pixeles por defecto en caso de no enviar parámetros */
+@mixin figuras ($fondo, $ancho:200px) {
+    background-color: $fondo;
+    width: $ancho;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.figura-1 {
+    /* Llama el mixin con includes */
+    @include figuras(#fff, 100px);
+}
+
+.figura-2 {
+    @include figuras(#222);
+}
+
+.figura-3 {
+    @include figuras(rgb(29, 163, 11), 300px);
+}
+
+.figuras {
+    h3 {
+        color: $thirdColor;
+    }
+}
+    </code></pre>
+
+    <div class="figuras">
+        <h3>Figuras usando @mixin con parámetros e @include</h3>
+        <div class="figura-1">
+            <p>Figura 1</p>
+        </div>
+
+        <div class="figura-2">
+            <p>Figura 2</p>
+        </div>
+
+        <div class="figura-3">
+            <p>Figura 3</p>
+        </div>
+    </div>
+
+    <pre style="font-size: 12px;"><code class="language-css">
+%btn {
+    height: 40px;
+    min-width: 100px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px 2px rgb(250, 248, 248);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btn- {
+    &primary, &success, &danger {
+        @extend %btn;
+    }
+    &primary {
+        background-color: $secondColor;
+    }
+    &success {
+        background-color: $mainColor;
+    }
+    &danger {
+        background-color: $fiveColor;
+    }
+}
+
+.botones {
+    h4 {
+        color: $thirdColor;
+    }
+}
+    </code></pre>
+
+    <section class="botones">
+        <h4>Botones Con @extend</h4>
+        <button class="btn-primary">Primary</button>
+        <button class="btn-success">Success</button>
+        <button class="btn-danger">Danger</button>
+    </section>
+
+    <!-- Comment Code Style -->
+    <script src="https://chrisxavix.github.io/Css/comment-code/prism.js"></script>
+</body>
+</html>

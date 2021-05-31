@@ -1,0 +1,28 @@
+/* Evita la repetición */
+/* Tiene como parámetro el color */
+/* Pixeles por defecto en caso de no enviar parámetros */
+@mixin figuras ($fondo, $ancho:200px) {
+    background-color: $fondo;
+    width: $ancho;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.figura-1 {
+    /* Llama el mixin con includes */
+    @include figuras(#fff, 100px);
+}
+
+.figura-2 {
+    @include figuras(#222);
+}
+
+.figura-3 {
+    @include figuras(rgb(29, 163, 11), 300px);
+}
+
+.figuras {
+    h3 {
+        color: $thirdColor;
+    }
+}

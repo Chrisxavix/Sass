@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* Archivo de Variables */
+/* Colores */
+/* Body */
+body {
+  background-color: #939443;
+}
+
+/* Main Section */
+.mainSection h1 {
+  color: #1a4d16;
+  font-size: 40px;
+  text-align: center;
+}
+
+.mainSection h2 {
+  color: #671372;
+}
+
+.mainSection p {
+  color: black;
+  font-weight: bold;
+}
+
+/* Cuadrados */
+/* Evita la repetición */
+/* Tiene como parámetro el color */
+/* Pixeles por defecto en caso de no enviar parámetros */
+.figura-1 {
+  /* Llama el mixin con includes */
+  background-color: #fff;
+  width: 100px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.figura-2 {
+  background-color: #222;
+  width: 200px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.figura-3 {
+  background-color: #1da30b;
+  width: 300px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.figuras h3 {
+  color: #671372;
+}
+
+/* Botones */
+.btn-primary, .btn-success, .btn-danger {
+  height: 40px;
+  min-width: 100px;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 6px 2px #faf8f8;
+          box-shadow: 2px 2px 6px 2px #faf8f8;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #ffa600;
+}
+
+.btn-success {
+  background-color: #1a4d16;
+}
+
+.btn-danger {
+  background-color: #ce2222;
+}
+
+.botones h4 {
+  color: #671372;
+}
+/*# sourceMappingURL=styles.css.map */
